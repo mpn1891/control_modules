@@ -10,12 +10,12 @@ class AnalogInput:
         self.raw = raw
 
     def scaling(self):
-        scaled = ((self.euMax-self.euMin)*(self.raw-self.rawMin)/ (self.rawMax-self.rawMin))
+        scaled = self.euMin + ((self.euMax-self.euMin)*(self.raw-self.rawMin)/ (self.rawMax-self.rawMin))
         return scaled
         
 
     def __str__(self):
-        return f"{self.name}({self.age})"
+        return f"{self.name}"
     
 
 
